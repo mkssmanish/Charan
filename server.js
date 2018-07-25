@@ -21,7 +21,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 //var app=express();
 var mongojs=require('mongojs');
 var mongoose  = require('mongoose');
+<<<<<<< HEAD
 var db=mongojs('collections',['moduleName','loginDetails','projectSelection,featureName,priority,types'])
+=======
+var db=mongojs('collections',['loginDetails','projectSelection'])
+>>>>>>> 79b53e73b22a2e5966c1678610f73bb368e3e844
 
 
 
@@ -37,14 +41,21 @@ app.use(bodyParser.json());
  //console.log("mmmmmmmmmmmmmooooooooooooooooooo")
 
 app.get('/loginDetails',function(req,res){
+<<<<<<< HEAD
 
    // console.log("ooooooooooooooooooo")
     db.loginDetails.find({"userName":"Admin"},function(err,doc){
+=======
+     
+   // console.log("ooooooooooooooooooo")
+    db.loginDetails.find({"userName":"Admin"},function(err,doc){        
+>>>>>>> 79b53e73b22a2e5966c1678610f73bb368e3e844
         res.json(doc);
         // console.log("kkkkkkkkkkkkkkk"+doc)
     })
 })
 app.get('/selectionProject',function(req,res){
+<<<<<<< HEAD
 
 
     db.projectSelection.find({},function(err,doc){
@@ -64,10 +75,16 @@ app.get('/importPriority',function(req,res){
 
 
     db.priority.find({},function(err,doc){
+=======
+     
+  
+    db.projectSelection.find({},function(err,doc){        
+>>>>>>> 79b53e73b22a2e5966c1678610f73bb368e3e844
         res.json(doc);
         // console.log("mm"+doc)
     })
 })
+<<<<<<< HEAD
 app.get('/getModuleName',function(req,res){
 
 
@@ -100,6 +117,13 @@ app.post('/postModuleName',function(req,res)
 {
    //var moduleName=req.params.moduleName;
 
+=======
+
+app.post('/postModuleName',function(req,res)
+{
+   //var moduleName=req.params.moduleName;
+   
+>>>>>>> 79b53e73b22a2e5966c1678610f73bb368e3e844
     //var moduleName = str_array[1];
 //console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
 
@@ -114,7 +138,11 @@ app.post('/postModuleName',function(req,res)
 app.post('/postFeatureName',function(req,res)
 {
    //var moduleName=req.params.moduleName;
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> 79b53e73b22a2e5966c1678610f73bb368e3e844
     //var moduleName = str_array[1];
 //console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
 

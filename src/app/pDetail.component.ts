@@ -1,4 +1,5 @@
 import { Component, Input,OnInit} from '@angular/core';
+<<<<<<< HEAD
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ProjectDetailServiceComponent } from './pDetail.service';
@@ -15,10 +16,24 @@ import {SelectionComponent} from './projectSelection.component';
    styleUrls: ['./css/pDetail.component.css'],
 
       providers: [ProjectDetailServiceComponent]
+=======
+import {SelectionComponent} from './projectSelection.component';
+import { ActivatedRoute, Router } from '@angular/router';
+//import { ModuleComponent } from './module.component';
+@Component({
+   selector: 'app-detail',
+ 
+  templateUrl:'./html/projectDetail.html',
+
+   styleUrls: ['./pDetail.component.css'],
+
+       
+>>>>>>> 79b53e73b22a2e5966c1678610f73bb368e3e844
 
 })//componrnt  closing
 
 export class ProjectDetailComponent implements OnInit  {
+<<<<<<< HEAD
    moduleChild:Post[];
   // moduleId:Post[];
 moduleName:Post[];
@@ -129,4 +144,44 @@ this.show = false;
           this.displayFeature=false;
         }
 
+=======
+ 
+
+    projectName:string;
+
+
+    show: boolean;
+
+    constructor(private router: Router,private route:ActivatedRoute) {
+    this.show = false;
+ 
+    }
+ 
+ 
+
+      ngOnInit(){
+
+
+             let dataFromProjectSelectionDropdown=sessionStorage.getItem('key');
+             this.projectName=dataFromProjectSelectionDropdown;
+
+      }
+ 
+    message:string;
+ 
+        changeShowStatus(){
+
+           this.show = true;
+ 
+        }
+
+        goCreateModule(){
+          this.router.navigate(['CreateModule'],{relativeTo:this.route})
+        }
+           goCreateFeature(){
+          this.router.navigate(['CreateFeature'],{relativeTo:this.route})
+        }
+
+
+>>>>>>> 79b53e73b22a2e5966c1678610f73bb368e3e844
 }

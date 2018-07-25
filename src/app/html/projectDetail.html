@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div>
 
 
@@ -96,5 +97,81 @@
 
 </div>
 <router-outlet></router-outlet>
+=======
+   <div>
+     <div class ="g" >
+
+      <button type="button" onclick="alert('Admin Page')" >Admin</button>
+          <button type="button" onclick="alert('Sign Out Successfully')">Sign Out</button>
+      
+      </div>
+ 
+ 
+    <h1 > Project Detail </h1>
+ 
+<h3> ProjectName:{{projectName}} </h3>
+  
+
+<!-- <div> -->
+<div class = "d">   
+  <p>    <b>  Modules  </b></p>
+  
+          </div>
+    <div >
+    <ul>
+        <li>
+            <span (click)="changeShowStatus()" class="active"><i class="glyphicon glyphicon-folder-open">
+      </i> <b> ModuleName</b></span>
+            <ul>
+                <li>
+          <p> </p>
+                  <p><span class="glyphicon glyphicon-file"></span> Child </p>
+          <p><span class="glyphicon glyphicon-file"></span> Grand Child</p>
+                    
+                        
+                     
+                </li>
+
+
+</ul>
+</li>
+</ul>
+</div>
+
+  
+ 
+  
+<div class="a" >
+    <table >
+        <tr >
+          <th (click)="changeShowStatus()" class="active"> Test Planning</th>
+
+        
+        <th>Test Execution</th>
+          <th>Report</th>
+        </tr>
+        <tr *ngIf="show==true">
+          <nav>
+    <td  ><button (click)="goCreateModule()">CreateModule</button>
+      <router-outlet></router-outlet>  
+<!-- <br>
+<br>
+<app-module></app-module> -->
+     </td>
+</nav>
+
+    <td ><button (click)="goCreateFeature()" >CreateFeature</button>
+
+ <router-outlet></router-outlet>  
+
+    </td>
+
+     <td ><button>ImportScript</button></td>
+  </tr>
+      </table>
+     
+</div>
+  <router-outlet></router-outlet>  
+>>>>>>> 79b53e73b22a2e5966c1678610f73bb368e3e844
 </div>
 
