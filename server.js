@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 //var app=express();
 var mongojs=require('mongojs');
 var mongoose  = require('mongoose');
-var db=mongojs('collections',['loginDetails','projectSelection'])
+var db=mongojs('collections',['moduleName','loginDetails','projectSelection,featureName,priority,types'])
 
 
 
@@ -37,41 +37,69 @@ app.use(bodyParser.json());
  //console.log("mmmmmmmmmmmmmooooooooooooooooooo")
 
 app.get('/loginDetails',function(req,res){
-     
+
    // console.log("ooooooooooooooooooo")
-    db.loginDetails.find({"userName":"Admin"},function(err,doc){        
+    db.loginDetails.find({"userName":"Admin"},function(err,doc){
         res.json(doc);
         // console.log("kkkkkkkkkkkkkkk"+doc)
     })
 })
 app.get('/selectionProject',function(req,res){
-     
-  
-    db.projectSelection.find({},function(err,doc){        
+
+
+    db.projectSelection.find({},function(err,doc){
         res.json(doc);
         // console.log("mm"+doc)
     })
 })
 app.get('/importType',function(req,res){
-     
+
   console.log("kkkkkkkkkkkkkkkkkkkkk")
-    db.types.find({},function(err,doc){        
+    db.types.find({},function(err,doc){
         res.json(doc);
-         console.log(doc)
+         //console.log(doc)
     })
 })
 app.get('/importPriority',function(req,res){
-     
-  
-    db.priority.find({},function(err,doc){        
+
+
+    db.priority.find({},function(err,doc){
         res.json(doc);
         // console.log("mm"+doc)
+    })
+})
+app.get('/getModuleName',function(req,res){
+
+
+
+    db.moduleName.find({},function(err,doc){
+        res.json(doc);
+        //console.log(doc)
+    })
+})
+app.get('/featureName',function(req,res){
+
+
+
+    db.featureName.find({},function(err,doc){
+        res.json(doc);
+        //console.log(doc)
+    })
+})
+app.get('/getFeatureName:ss',function(req,res){
+     console.log("llllllllllllllllll")
+     var moduleName1=req.params.ss
+     moduleName1 = parseInt(moduleName1);
+  console.log(moduleName1+"llllllllllllllllll")
+    db.featureName.find({"ModuleId":moduleName1},function(err,doc){
+        res.json(doc);
+        console.log(doc)
     })
 })
 app.post('/postModuleName',function(req,res)
 {
    //var moduleName=req.params.moduleName;
-   
+
     //var moduleName = str_array[1];
 //console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
 
@@ -86,7 +114,7 @@ app.post('/postModuleName',function(req,res)
 app.post('/postFeatureName',function(req,res)
 {
    //var moduleName=req.params.moduleName;
-   
+
     //var moduleName = str_array[1];
 //console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
 

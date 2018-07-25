@@ -1,4 +1,12 @@
 <div>
+	ModuleName:<select >
+      <option *ngFor="let module of modules">{{module.moduleName}}</option>
+   </select>
+   <br>
+   FeatureName:<select >
+      <option *ngFor="let feature of features">{{feature.featureName}}</option>
+   </select>
+   <br>
   Type:<select    >
       <option *ngFor="let type of types">{{type.typeScenario}}</option>
    </select>

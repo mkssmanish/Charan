@@ -1,9 +1,11 @@
 
 
-import { Component,OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+
 import {  RouterModule, Routes   } from '@angular/router';
 
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Directive } from '@angular/core';
 import { LoginComponent } from './login.component';
@@ -17,20 +19,19 @@ export const appRoutes: Routes = [
    { path: 'projectDetail', component: ProjectDetailComponent  },
  { path: 'projectSelection', component: SelectionComponent  },
   { path: 'ImportPage', component: ImportComponent },
-  
+
 ];
 @Component({
   selector: 'app-root',
- 
-   templateUrl:'./html/app.component.html',
-            
-           
- // providers: [LoginServiceComponent],
 
-         })//componrnt  closing
+   templateUrl: './html/app.component.html',
+
+ // providers: [LoginServiceComponent],
+     // component closing
+         })
 
 export class AppComponent {
-   
-   
+
+
 
 }

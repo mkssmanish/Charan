@@ -1,53 +1,50 @@
 
 
-import { Component,OnInit } from '@angular/core';
-//import { NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+// import { NgZone } from '@angular/core';
 
 import { Router } from '@angular/router';
 import {LoginServiceComponent} from './login.service';
 
 @Component({
   selector: 'app-login',
- 
-  templateUrl:'./html/login.component.html',
-            
-           
- providers: [LoginServiceComponent],
 
-         })//componrnt  closing
+  templateUrl: './html/login.component.html',
+ providers: [LoginServiceComponent],
+    // componrnt  closing
+         })
 
 export class LoginComponent implements OnInit {
-  
-    userNameDetails:string ;
-    passwordDetails:string ;
-   
-    loginUserDetails:any[];
-    constructor(private getData:LoginServiceComponent,private router: Router){
+
+    userNameDetails: string ;
+    passwordDetails: string ;
+    loginUserDetails: any[];
+    constructor(private getData: LoginServiceComponent, private router: Router) {
 
     }
 
-       ngOnInit(){
+       ngOnInit() {
 
 
 
-           this.getData.getLoginDetails().subscribe(allData => this.loginUserDetails=allData);
-      
-           this.checkLoginDetails()
+           this.getData.getLoginDetails().subscribe(allData => this.loginUserDetails = allData);
+
+           this.checkLoginDetails ()
 
 
 
 
        }
 
-            checkLoginDetails(){
-      
-               if( this.userNameDetails ==this.loginUserDetails[0].userName &&this.passwordDetails==this.loginUserDetails[0].password){
-                
-                  this.router.navigate(['/projectSelection']); 
+            checkLoginDetails() {
+
+      if ( this.userNameDetails == this.loginUserDetails[0].userName && this.passwordDetails == this.loginUserDetails[0].password){
+
+                  this.router.navigate(['/projectSelection']);
 
                }
-                 else{
-                   
+                 else {
+
                  }
 
            }

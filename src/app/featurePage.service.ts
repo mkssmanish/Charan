@@ -11,8 +11,8 @@ import {Post} from './post'
 @Injectable()
 export class FeatureServiceComponent {
 
- 
- constructor(public http:Http){
+
+ constructor(public http: Http){
 
  }
    featureServiceDetails(featureName){
@@ -28,7 +28,7 @@ urlSearchParams.append('featureName', featureName);
       .subscribe(data => {
       console.log(data);
     });
- 
+
 
   }
 }
